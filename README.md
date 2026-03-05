@@ -51,10 +51,13 @@ cartoony_downloader/
 │   ├── engine.py        # ⚙️ Automation Engine (Playwright)
 │   └── utils.py         # 🔍 Scraping Utilities
 ├── static/              # 🎨 Frontend Assets
-├── .env.example         # 🔑 Environment Template
-├── requirements.txt     # 📦 Python Dependencies
-├── setup.bat            # 🛠️ One-Click Setup
-└── start.bat            # 🚀 One-Click Start
+├── scripts/             # �️ Launch & Setup Scripts
+│   ├── setup.bat
+│   └── start.bat
+├── config/              # ⚙️ Project Configuration
+│   ├── requirements.txt
+│   └── .env.example
+└── .env                 # � Environment Variables (Git-ignored)
 ```
 
 ---
@@ -70,9 +73,8 @@ cartoony_downloader/
 
 ## ⚡ Quick Start (Windows)
 
-1.  **Run `setup.bat`**: Creates virtual environment and installs dependencies.
-2.  **Run `start.bat`**: Launches the server.
-3.  Open **[http://localhost:8000](http://localhost:8000)** in your browser.
+1.  **Run `scripts\setup.bat`**: Creates virtual environment and installs dependencies.
+2.  **Run `scripts\start.bat`**: Launches the server and Auto-Opens in browser.
 
 ---
 
@@ -94,13 +96,13 @@ Ensure you have **Python 3.10+** installed and checked **"Add Python to PATH"** 
 ### Manual Setup
 
 ```bash
-git clone https://github.com/kalidahmdev/cartoony-downloader.git
+git clone https://github.com/kalidahmdev/cartoony_downloader.git
 cd cartoony-downloader
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r config/requirements.txt
 python -m playwright install chromium
-cp .env.example .env
+cp config/.env.example .env
 python src/api.py
 ```
 
