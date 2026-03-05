@@ -115,9 +115,13 @@ cartoony_downloader/
 
 ### 🐳 Docker Deployment
 
+Building the container locally ensures you have the latest code and dependencies. Run the following command in the root directory:
+
 ```bash
-docker-compose up -d
+docker-compose -f docker/docker-compose.yml up -d --build
 ```
+
+**Note**: The container runs as a non-root user (`pwuser`) for enhanced security.
 
 ### 🐍 Manual Setup
 

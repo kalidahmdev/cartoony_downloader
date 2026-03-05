@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cartoony_downloader
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./downloads:/app/downloads
+      - .env:/app/.env
+    env_file:
+      - .env
+    environment:
+      - PORT=8000
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10mb"
+        max-file: "3"
