@@ -13,7 +13,7 @@
   <a href="#🛠️-tech-stack--architecture">Tech Stack</a> •
   <a href="#🚀-getting-started">Getting Started</a> •
   <a href="#🎨-design-system">Design System</a> •
-  <a href="#🧪-testing--quality">Testing</a>
+  <a href="#🤝-contributing--community">Contributing</a>
 </p>
 
 <p align="center">
@@ -26,12 +26,6 @@
 </p>
 
 ---
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
-
-## ⚖️ License
 
 ---
 
@@ -123,10 +117,8 @@ cartoony_downloader/
 
 ### 🐳 Docker Deployment
 
-Building the container locally ensures you have the latest code and dependencies. Run the following command in the root directory:
-
 ```bash
-docker-compose -f docker/docker-compose.yml up -d --build
+docker-compose up -d --build
 ```
 
 **Note**: The container runs as a non-root user (`pwuser`) for enhanced security.
@@ -166,16 +158,16 @@ The UI is built on a custom **Liquid Glass** design system, defined in `static/s
 
 ---
 
-## � Contributing & Community
+## 🤝 Contributing & Community
 
 We celebrate open-source! Whether you're fixing a bug, suggesting a feature, or improving documentation, your contributions make **Cartoony Downloader Pro** better for everyone.
 
 ### 🛠️ How to Contribute
 
-1. **Fork the Repository**: Create your own branch from `main`.
-2. **Setup Environment**: Follow the [Getting Started](#🚀-getting-started) guide.
-3. **Draft a Feature/Bug Report**: Opening an Issue before starting work ensures alignment.
-4. **Submit a Pull Request**: Provide a detailed description of your changes.
+1.  **Fork the Repository**: Create your own branch from `main`.
+2.  **Setup Environment**: Follow the [Getting Started](#🚀-getting-started) guide.
+3.  **Draft a Feature/Bug Report**: Opening an Issue before starting work ensures alignment.
+4.  **Submit a Pull Request**: Provide a detailed description of your changes.
 
 ### 🛡️ Open Source Standards
 
@@ -187,7 +179,7 @@ We celebrate open-source! Whether you're fixing a bug, suggesting a feature, or 
 
 ---
 
-## � Security & Privacy
+## 🔒 Security & Privacy
 
 We take security seriously. Since this tool handles browser automation:
 
