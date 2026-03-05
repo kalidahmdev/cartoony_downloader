@@ -9,6 +9,7 @@ load_dotenv()
 # Configuration Defaults (can be overridden via .env)
 DEFAULT_DOWNLOAD_PATH = os.getenv("DOWNLOAD_PATH", os.path.join(os.getcwd(), "downloads"))
 MAX_RETRIES = int(os.getenv("MAX_RETRIES", 3))
+HEADLESS = os.getenv("HEADLESS", "False").lower() == "true"
 
 class CartoonyDownloader:
     """
@@ -231,7 +232,7 @@ class CartoonyDownloader:
 
         try:
             async with async_playwright() as p:
-                self.browser = await p.chromium.launch(headless=False)
+                self.browser = await p.chromium.launch(headless=HEADLESS)
                 context = await self.browser.new_context(accept_downloads=True)
 
                 # Main Processing Loop

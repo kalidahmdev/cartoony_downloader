@@ -215,6 +215,11 @@ startBtn.addEventListener("click", async () => {
     return;
   }
 
+  // Request notification permission if not already granted
+  if (Notification.permission === "default") {
+    Notification.requestPermission();
+  }
+
   setRunning(true);
   logsContainer.innerHTML = "";
   addLog("Initializing batch process...");
@@ -231,6 +236,14 @@ startBtn.addEventListener("click", async () => {
       eventSource = null;
       setRunning(false);
       addLog("Batch process completed.");
+
+      // Trigger Desktop Notification
+      if (Notification.permission === "granted") {
+        new Notification("Cartoony Downloader Pro", {
+          body: "🎉 All downloads have finished successfully!",
+          icon: "/static/logo.webp",
+        });
+      }
     } else {
       addLog(event.data);
     }

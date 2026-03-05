@@ -5,9 +5,12 @@ REM Navigate to the project root directory from the scripts folder
 cd /d "%~dp0.."
 
 if not exist .venv (
-    echo ❌ Virtual environment not found. Please run scripts\setup.bat first.
-    pause
-    exit /b
+    echo ❌ Virtual environment not found. 
+    choice /c YN /m "Do you want to run setup.bat now"
+    if errorlevel 2 exit /b
+    if errorlevel 1 (
+        scripts\setup.bat
+    )
 )
 
 call .venv\Scripts\activate

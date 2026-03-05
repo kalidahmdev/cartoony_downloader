@@ -41,10 +41,25 @@ for /d %%i in ("%LocalAppData%\Programs\Python\Python3*", "%ProgramFiles%\Python
 :python_found
 if "%PYTHON_CMD%"=="" (
     echo ❌ Python not found.
-    echo Please install Python 3.10+ from https://www.python.org/
-    echo IMPORTANT: Make sure to check the "Add Python to PATH" box during installation!
-    pause
-    exit /b
+    echo Cartoony Downloader Pro requires Python 3.10+ to run.
+    choice /c YN /m "Would you like me to automatically download and install Python 3.11 now"
+    if errorlevel 2 (
+        echo Please install Python manually from https://www.python.org/
+        pause
+        exit /b
+    )
+    if errorlevel 1 (
+        echo 📥 Downloading and installing Python... (This may take a few minutes)
+        winget install -e --id Python.Python.3.11 --accept-package-agreements --accept-source-agreements
+        if %errorlevel% neq 0 (
+            echo ❌ Failed to automatically install Python. Please install it manually.
+            pause
+            exit /b
+        )
+        echo ✅ Python installed successfully! Please completely close this window and run scripts\setup.bat again.
+        pause
+        exit /b
+    )
 )
 
 echo ✅ Found Python at: %PYTHON_CMD%
@@ -73,6 +88,9 @@ if not exist .env (
 
 echo.
 echo 🎉 Setup complete!
-echo To start the server, run: scripts\start.bat
 echo.
-pause
+choice /c YN /m "Do you want to start the server now"
+if errorlevel 2 exit /b
+if errorlevel 1 (
+    scripts\start.bat
+)
