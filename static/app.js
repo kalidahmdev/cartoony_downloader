@@ -11,6 +11,7 @@ const episodeList = document.getElementById("episodeList");
 const episodeCount = document.getElementById("episodeCount");
 const selectAllBtn = document.getElementById("selectAll");
 const deselectAllBtn = document.getElementById("deselectAll");
+const copyLogsBtn = document.getElementById("copyLogsBtn");
 
 const seasonIdInput = document.getElementById("seasonId");
 const downloadPathInput = document.getElementById("downloadPath");
@@ -278,4 +279,21 @@ confirmYes.addEventListener("click", async () => {
   } catch (e) {
     console.error("Cancel error:", e);
   }
+});
+
+// Copy logs logic
+copyLogsBtn.addEventListener("click", () => {
+  const logText = Array.from(logsContainer.querySelectorAll(".log-entry"))
+    .map((entry) => entry.textContent)
+    .join("\n");
+
+  navigator.clipboard.writeText(logText).then(() => {
+    const originalText = copyLogsBtn.textContent;
+    copyLogsBtn.textContent = "✅ Copied!";
+    copyLogsBtn.classList.add("success");
+    setTimeout(() => {
+      copyLogsBtn.textContent = originalText;
+      copyLogsBtn.classList.remove("success");
+    }, 2000);
+  });
 });

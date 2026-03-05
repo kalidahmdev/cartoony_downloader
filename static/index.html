@@ -14,7 +14,17 @@
     <link rel="icon" type="image/png" href="/static/favicon.png" />
   </head>
   <body>
-      <div class="mesh-bg-orb" style="background: #8b5cf6; top: 40%; left: 30%; animation: floatOrb 35s ease-in-out infinite alternate; filter: blur(120px); opacity: 0.2;"></div>
+    <div
+      class="mesh-bg-orb"
+      style="
+        background: #8b5cf6;
+        top: 40%;
+        left: 30%;
+        animation: floatOrb 35s ease-in-out infinite alternate;
+        filter: blur(120px);
+        opacity: 0.2;
+      "
+    ></div>
     <div class="ambient-orbs">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
@@ -97,7 +107,10 @@
         </div>
 
         <div class="card glass logs-card">
-          <h3>Live Progress</h3>
+          <div class="logs-header">
+            <h3>Live Progress</h3>
+            <button id="copyLogsBtn" class="mini-btn">📋 Copy Logs</button>
+          </div>
           <div id="logs" class="logs-container">
             <div class="log-entry system">
               System ready. Fetch episodes to begin...
@@ -107,7 +120,11 @@
       </main>
       <footer>
         <p>
-          Built with ❤️ by <a href="https://github.com/kalidahmdev" target="_blank">kalidahmdev</a> •
+          Built with ❤️ by
+          <a href="https://github.com/kalidahmdev" target="_blank"
+            >kalidahmdev</a
+          >
+          •
           <a
             href="https://github.com/kalidahmdev/cartoony-downloader"
             target="_blank"

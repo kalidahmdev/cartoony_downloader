@@ -27,6 +27,14 @@
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
+
+## ⚖️ License
+
+---
+
 ## 📖 Overview
 
 **Cartoony Downloader Pro** is an enterprise-grade automation solution built for mass-archiving content from `cartoony.net`. By leveraging a multi-threaded **Playwright** engine and a sleek **FastAPI** backbone, it transforms complex browser interactions into a seamless, high-velocity downloading experience. Wrapped in a stunning **Liquid Glass** UI, it’s not just a tool—it’s a production-ready media pipeline.

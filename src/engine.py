@@ -1,6 +1,7 @@
 import asyncio
 import os
 from playwright.async_api import async_playwright, Browser, BrowserContext, Page
+from playwright_stealth import stealth_async
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -139,6 +140,7 @@ class CartoonyDownloader:
 
         url = f"https://cartoony.net/watch/{season_id}/{ep_id}"
         page = await context.new_page()
+        await stealth_async(page)
 
         try:
             await self.log(f"🔄 EP {ep_id}: Loading automation...")
