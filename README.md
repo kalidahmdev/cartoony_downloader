@@ -186,9 +186,9 @@ We take security seriously. Since this tool handles browser automation:
 ---
 
 <p align="center">
-  <strong>Cartoony Downloader Pro</strong> — Built for speed, designed for style.
+  <strong>Cartoony Downloader Pro</strong> — Built with ❤️ by <a href="https://github.com/kalidahmdev">kalidahmdev</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Made_with-Love-red?style=flat-square" alt="Made With Love">
+  <a href="https://github.com/kalidahmdev/cartoony-downloader">View on GitHub</a>
 </p>
